@@ -3,7 +3,7 @@ package com.my.dispatch;
 import com.my.vo.Book;
 //import com.my.vo.Magazine;
 import java.util.Scanner;
-import com.my.manager.ArrayManager;
+import com.my.manager.*;
 
 /**	Library program for managing books
  * 
@@ -22,7 +22,7 @@ import com.my.manager.ArrayManager;
 public class BookTest {
 	public static void main(String[] args) {
 		String mainMenu = "1)조회   2)입력  3)수정  4)삭제  5)검색  6)종료";
-		ArrayManager man = new ArrayManager();
+		IManager man = new ArrayManager();
 		boolean flag = true;
 		int key;
 		int index = 0;

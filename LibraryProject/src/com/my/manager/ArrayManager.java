@@ -1,11 +1,11 @@
 package com.my.manager;
 
 import java.util.Scanner;
-
+import com.my.manager.*;
 import com.my.vo.Book;
 import com.my.vo.Magazine;
 
-public class ArrayManager {
+public class ArrayManager implements IManager{
 	private Book[] books;
 	private int index;
 	public ArrayManager() {

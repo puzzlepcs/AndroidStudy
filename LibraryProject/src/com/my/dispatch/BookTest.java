@@ -22,7 +22,7 @@ import com.my.manager.*;
 public class BookTest {
 	public static void main(String[] args) {
 		String mainMenu = "1)조회   2)입력  3)수정  4)삭제  5)검색  6)종료";
-		IManager man = new ArrayManager();
+		IManager man = new ListManager();
 		boolean flag = true;
 		int key;
 		int index = 0;

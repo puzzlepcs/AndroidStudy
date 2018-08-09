@@ -1,17 +1,15 @@
 package com.my.manager;
+import com.my.vo.*;
+import java.util.*;
 
-import java.util.Scanner;
-import com.my.manager.*;
-import com.my.vo.Book;
-import com.my.vo.Magazine;
-
-public class ArrayManager implements IManager{
-	private Book[] books;
-	private int index;
-	public ArrayManager() {
-		books = new Book[10];
+public class ListManager implements IManager{
+	private ArrayList<Book> list;
+	
+	public ListManager() {
+		list = new ArrayList<Book>();
 	}
 	
+	@Override 
 	public int insert() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("1)Book  2)Magazine");
@@ -41,20 +39,23 @@ public class ArrayManager implements IManager{
 		} else if(input == 1) {
 			b = new Book(isbn, title, author, publisher, price, desc);	
 		}
-//		System.out.println(index);
-		books[index] = b;
-		return ++index;
+		
+		list.add(b);
+		return list.size();
 	}
 	
+	@Override
 	public int update() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("수정할 책의 isbn을 입력하시오.");
 		String isbn = s.next();
-		for(int i = 0; i < index; i++){
-			if(books[i].getIsbn().equals(isbn)) {
-				
-				if(books[i] instanceof Magazine) {
-					Magazine b = (Magazine)books[i];
+		
+		for(Book b : list) {
+			if(b.getIsbn().equals(isbn)) {
+				int idx = list.indexOf(b);
+				if(b instanceof Magazine) {
+					Magazine n = null;
+					
 					System.out.print("isbn = ");
 					String isbn_ = s.next();
 					System.out.print("title = ");
@@ -71,10 +72,11 @@ public class ArrayManager implements IManager{
 					int year = s.nextInt();
 					System.out.println("month = ");
 					int month = s.nextInt();
-					b = new Magazine(isbn_, title, author, publisher, price, desc, year, month);
-					books[i] = b;
-				} else if(books[i] instanceof Book) {
-					Book b = books[i];
+					
+					n = new Magazine(isbn_, title, author, publisher, price, desc, year, month);
+					list.set(idx, n);
+				} else {
+					Book n = null;
 					System.out.print("isbn = ");
 					String isbn_ = s.next();
 					System.out.print("title = ");
@@ -87,54 +89,52 @@ public class ArrayManager implements IManager{
 					int price = s.nextInt();
 					System.out.print("desc = ");
 					String desc = s.next();
-					b = new Book(isbn_, title, author, publisher, price, desc);
-					books[i] = b;
-				} 
+					
+					n = new Book(isbn_, title, author, publisher, price, desc);
+					list.set(idx, n);
+				}
 				break;
 			}
 		}
 		return 0;
 	}
-
+	@Override
 	public int delete() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("삭제할 책의 isbn을 입력하시오.");
 		String isbn = s.next();
 		
-		for(int i = 0; i < index; i++){
-			if(books[i].getIsbn().equals(isbn)) {
-				books[i] = books[index-1];
-				index--;
+		for(Book b :list){
+			if(b.getIsbn().equals(isbn)) {
+				int idx = list.indexOf(b);
+				list.remove(idx);
 				break;
 			}
 		}
-		return index;
+		return list.size();
 	}
-
+	@Override
 	public int list() {
-		for (int i = 0; i < index; ++i) {
-			System.out.println(books[i].toString());
+		for(Book b : list) {
+			System.out.println(b.toString());
 		}
 		return 0;
 	}
-
+	@Override
 	public int find() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("검색할 책의 isbn을 입력하시오.");
 		String isbn = s.next();
 		
-		boolean res = false;
-		
-		for(int i = 0; i < index; i++){
-			if(books[i].getIsbn().equals(isbn)) {
-				System.out.println(books[i].toString());
-				res = true;
+		for(Book b :list){
+			if(b.getIsbn().equals(isbn)) {
+				System.out.println(b.toString());
+				break;
+			} else {
+				System.out.println("못찾았당");
 			}
 		}
 		
-		if(!res) 
-			System.out.println("못찾았당");
-		return index;
+		return 0;
 	}
-
 }

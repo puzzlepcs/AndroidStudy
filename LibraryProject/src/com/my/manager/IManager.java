@@ -1,7 +1,7 @@
 package com.my.manager;
 
 public interface IManager {
-	int insert();
+	int insert() throws Exception;
 	int update();
 	int delete();
 	int list();

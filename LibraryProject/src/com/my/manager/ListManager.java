@@ -1,6 +1,7 @@
 package com.my.manager;
 import com.my.vo.*;
 import java.util.*;
+import com.my.excep.*;
 
 public class ListManager implements IManager{
 	private ArrayList<Book> list;
@@ -10,13 +11,19 @@ public class ListManager implements IManager{
 	}
 	
 	@Override 
-	public int insert() {
+	public int insert() throws DuplicatedIsbnException{
 		Scanner s = new Scanner(System.in);
 		System.out.println("1)Book  2)Magazine");
 		int input = s.nextInt();
 				
 		System.out.print("isbn = ");
 		String isbn = s.next();
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getIsbn().equals(isbn)) {
+				throw new DuplicatedIsbnException();
+			}
+		}
+		
 		System.out.print("title = ");
 		String title = s.next();
 		System.out.print("author = ");

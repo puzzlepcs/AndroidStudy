@@ -3,6 +3,7 @@ package com.my.dispatch;
 import com.my.vo.Book;
 //import com.my.vo.Magazine;
 import java.util.Scanner;
+import com.my.excep.*;
 import com.my.manager.*;
 
 /**	Library program for managing books
@@ -36,7 +37,13 @@ public class BookTest {
 				man.list();
 				break;
 			case 2:		// 입력
-				man.insert();
+				try {
+					man.insert();
+				} catch (DuplicatedIsbnException e){
+					e.myMethod();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				break;
 			case 3:		// 수정
 				man.update();

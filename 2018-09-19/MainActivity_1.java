@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static String TABLE_NAME = "employee";
     private static int DATABASE_VERSION = 1;
     private DatabaseHelper dbHelper;
-    private SQLiteDatabase db;
+    private SQLiteDatabase db;        // 객체 선언
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 DATABASE_NAME = input01.getText().toString();
-                boolean isOpen = openDatabase();
+                boolean isOpen = openDatabase();                
                 if (isOpen) {
                     executeRawQuery();
                     executeRawQueryParam();

@@ -103,10 +103,11 @@ git remote set-url <저장소 이름> <URL>.git   # 저장소 URL 수정
 수정을 한 사항들을 로컬파일에서 최신화 시킬 때, 수정된 부분만 업데이트 시켜주는 명령어인 `git pull`명령어를 사용해보자.
 
 ## 5. 협업하기
-[링크](https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/)
+[링크](https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/)  
 
 ## 참고한 글, 참고하면 좋은 글
-[깃허브 이용하기](https://medium.com/@psychet_learn/git-%EC%82%AC%EC%9A%A9%EB%B2%95-3%EC%9E%A5-github-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0-f53e765844e3)
-[github fork 에서 pull request 까지 그리고 merge](https://medium.com/axisj/github-fork-%EC%97%90%EC%84%9C-pull-request-%EA%B9%8C%EC%A7%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-merge-a22bdd097283)
-[깃허브로 취업하기](http://sujinlee.me/professional-github/)
-[완전 초보를 위한 깃허브](https://nolboo.kim/blog/2013/10/06/github-for-beginner/)
+[깃허브 이용하기](https://medium.com/@psychet_learn/git-%EC%82%AC%EC%9A%A9%EB%B2%95-3%EC%9E%A5-github-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0-f53e765844e3)  
+[github fork 에서 pull request 까지 그리고 merge](https://medium.com/axisj/github-fork-%EC%97%90%EC%84%9C-pull-request-%EA%B9%8C%EC%A7%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-merge-a22bdd097283)  
+[깃허브로 취업하기](http://sujinlee.me/professional-github/)  
+[완전 초보를 위한 깃허브](https://nolboo.kim/blog/2013/10/06/github-for-beginner/)  
+[오픈소스기여를 위한 GITHUB 개념 정리](http://guruble.com/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98-%EC%BB%A8%ED%8A%B8%EB%A6%AC%EB%B7%B0%ED%84%B0%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%90%98%EB%8A%94-%EA%B2%83/)
